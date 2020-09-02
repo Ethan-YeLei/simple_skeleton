@@ -1,0 +1,43 @@
+{
+    "name": "ethan-yelei/vaild",
+    "description": "编写脚手架",
+    "authors": [
+        {
+            "name": "YeLei",
+            "email": "61647649@qq.com"
+        }
+    ],
+    "license": "MIT",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Installer\\": "installer/",
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "secure-http": false
+    },
+    "repositories": {
+        "composer": {
+            "type": "composer",
+            "url": "https://repo.packagist.org"
+        },
+        "aliyun": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "egulias/email-validator": "^1.0"
+    },
+    "scripts": {
+        "composer install 命令之前执行": "Installer\\Script::install",
+        "pre-install-cmd": "Installer\\Script::install",
+        "composer update 命令之前执行": "Installer\\Script::install",
+        "pre-update-cmd": "Installer\\Script::install",
+        "post-install-cmd": "Installer\\Script::afterInstall",
+        "post-update-cmd": "Installer\\Script::afterInstall"
+    }
+}
