@@ -22,8 +22,9 @@ class Script
     /*
      * 命令执行完之后执行
      */
-    public static function afterInstall(): void
+    public static function afterInstall(Event $event): void
     {
+        $event->getIO()->write('<info> Clean componser.lock </info>');
         $lockFile = dirname(__DIR__) . "/composer.lock";
         if (is_file($lockFile)) {
             unlink($lockFile);
