@@ -6,8 +6,8 @@ declare(strict_types = 1);
  */
 return [
     'optional' => [
-        'k3/framework' => [
-            'version' => '^1.0',
+        'nette/utils' => [
+            'version' => '^v3.1',
         ],
         'egulias/email-validator' => [
             'version' => '^2.0' ,
