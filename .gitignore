@@ -4,11 +4,10 @@
 *.patch
 .idea/
 .git/
+runtime/
 vendor/
 .phpintel/
-.DS_Store
-.phpunit*
-sh/
 .env
-runtime
-*.iml
+.DS_Store
+*.lock
+.phpunit*

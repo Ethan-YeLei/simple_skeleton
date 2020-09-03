@@ -198,12 +198,12 @@ class InstallMain
             $this->composerDefinition['scripts']['pre-install-cmd'],
             $this->composerDefinition['scripts']['post-create-project-cmd'],
             $this->composerDefinition['scripts']['post-install-cmd'],
-            $this->composerDefinition['scripts']['post-update-cmd']
+            $this->composerDefinition['scripts']['post-update-cmd'],
+            $this->composerDefinition['scripts']['post-root-package-install']
         );
 
         // 2.删除install目录
         Util::RecursiveRmdir($this->installPath);
-
 
         // 3.固化composer.json
         $this->composerJson->write($this->composerDefinition);

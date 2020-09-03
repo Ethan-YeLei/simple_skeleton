@@ -1,43 +1,86 @@
 {
     "name": "ethan-yelei/simpleapp",
-    "description": "编写脚手架",
+
+    "type": "project",
+
+    "keywords": [
+        "php",
+        "framework",
+        "middleware"
+    ],
+
+    "description": "A coroutine framework that focuses on hyperspeed and flexible, specifically use for build microservices and middlewares.",
+
     "authors": [
         {
             "name": "YeLei",
             "email": "61647649@qq.com"
         }
     ],
-    "license": "MIT",
+
+    "repositories": {
+        "aliyun": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        },
+        "composer": {
+            "type": "composer",
+            "url": "https://repo.packagist.org"
+        }
+    },
+
+    "license": "Apache-2.0",
+
     "prefer-stable": true,
+
+    "require": {
+        "php": ">=7.2",
+        "hyperf/hyperf": "^2.0.0"
+    },
+
+    "require-dev": {
+        "hyperf/testing": "~2.0.0"
+    },
+
+    "suggest": {
+        "ext-openssl": "Required to use HTTPS.",
+        "ext-json": "Required to use JSON.",
+        "ext-pdo": "Required to use MySQL Client.",
+        "ext-pdo_mysql": "Required to use MySQL Client.",
+        "ext-redis": "Required to use Redis Client."
+    },
+
+
     "autoload": {
         "psr-4": {
             "Installer\\": "installer/",
             "App\\": "app/"
+        },
+        "files": [
+
+        ]
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "./test/"
         }
     },
+
+
     "config": {
         "secure-http": false
     },
-    "repositories": {
-        "composer": {
-            "type": "composer",
-            "url": "https://repo.packagist.org"
-        },
-        "aliyun": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
-    },
-    "require": {
-        "php": ">=7.1",
-        "egulias/email-validator": "^1.0"
-    },
+
+
     "scripts": {
-        "composer install 命令之前执行": "Installer\\Script::install",
         "pre-install-cmd": "Installer\\Script::install",
-        "composer update 命令之前执行": "Installer\\Script::install",
         "pre-update-cmd": "Installer\\Script::install",
         "post-install-cmd": "Installer\\Script::afterInstall",
-        "post-update-cmd": "Installer\\Script::afterInstall"
+        "post-update-cmd": "Installer\\Script::afterInstall",
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "test": "co-phpunit -c phpunit.xml --colors=always"
     }
 }
