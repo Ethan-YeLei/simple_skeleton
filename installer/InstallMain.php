@@ -180,7 +180,7 @@ class InstallMain
         $this->composerPackage->setRequires($this->composerRequires);
         $this->composerPackage->setDevRequires($this->composeDevRequires);
         $this->composerPackage->setAutoload($this->composerDefinition['autoload']);
-        $this->composerPackage->setDevAutolod($this->composerDefinition['autoload-dev']);
+        $this->composerPackage->setDevAutoload($this->composerDefinition['autoload-dev']);
     }
 
     /**
