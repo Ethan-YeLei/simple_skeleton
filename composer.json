@@ -78,8 +78,6 @@
     "scripts": {
         "pre-install-cmd": "Installer\\Script::install",
         "pre-update-cmd": "Installer\\Script::install",
-        "post-install-cmd": "Installer\\Script::afterInstall",
-        "post-update-cmd": "Installer\\Script::afterInstall",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
