@@ -1,23 +1,19 @@
 {
     "name": "ethan-yelei/simpleapp",
-
     "type": "project",
-
     "keywords": [
         "php",
         "framework",
         "middleware"
     ],
-
-    "description": "A coroutine framework that focuses on hyperspeed and flexible, specifically use for build microservices and middlewares.",
-
+    "description": "framework",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "YeLei",
             "email": "61647649@qq.com"
         }
     ],
-
     "repositories": {
         "aliyun": {
             "type": "composer",
@@ -28,20 +24,24 @@
             "url": "https://repo.packagist.org"
         }
     },
-
-    "license": "Apache-2.0",
-
-    "prefer-stable": true,
-
     "require": {
         "php": ">=7.2",
-        "hyperf/hyperf": "^2.0.0"
+        "ext-swoole": ">=4.5",
+        "hyperf/cache": "~2.0.0",
+        "hyperf/command": "~2.0.0",
+        "hyperf/config": "~2.0.0",
+        "hyperf/db-connection": "~2.0.0",
+        "hyperf/framework": "~2.0.0",
+        "hyperf/guzzle": "~2.0.0",
+        "hyperf/http-server": "~2.0.0",
+        "hyperf/logger": "~2.0.0",
+        "hyperf/memory": "~2.0.0",
+        "hyperf/process": "~2.0.0",
+        "hyperf/redis": "~2.0.0"
     },
-
     "require-dev": {
         "hyperf/testing": "~2.0.0"
     },
-
     "suggest": {
         "ext-openssl": "Required to use HTTPS.",
         "ext-json": "Required to use JSON.",
@@ -49,8 +49,6 @@
         "ext-pdo_mysql": "Required to use MySQL Client.",
         "ext-redis": "Required to use Redis Client."
     },
-
-
     "autoload": {
         "psr-4": {
             "Installer\\": "installer/",
@@ -60,19 +58,15 @@
 
         ]
     },
-
     "autoload-dev": {
         "psr-4": {
             "HyperfTest\\": "./test/"
         }
     },
-
-
+    "prefer-stable": true,
     "config": {
         "secure-http": false
     },
-
-
     "scripts": {
         "pre-install-cmd": "Installer\\Script::install",
         "pre-update-cmd": "Installer\\Script::install",

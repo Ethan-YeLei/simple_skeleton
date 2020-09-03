@@ -102,10 +102,9 @@ class InstallMain
         $this->composerPackage = $composer->getPackage();
         $this->composerRequires = $this->composerPackage->getRequires();
         $this->composeDevRequires = $this->composerPackage->getDevRequires();
-        // $this->stabilityFlags = $this->composerPackage->getStabilityFlags();
     }
 
-    // 初始化临时运行目录
+    // 初始化生成临时运行目录
     private function _InitRuntimeDir()
     {
         // 打印信息到控制台
@@ -181,6 +180,7 @@ class InstallMain
         $this->composerPackage->setRequires($this->composerRequires);
         $this->composerPackage->setDevRequires($this->composeDevRequires);
         $this->composerPackage->setAutoload($this->composerDefinition['autoload']);
+        $this->composerPackage->setDevAutolod($this->composerDefinition['autoload-dev']);
     }
 
     /**
@@ -191,12 +191,8 @@ class InstallMain
         // 1、移除composer内的安装脚本配置
         unset(
             $this->composerDefinition['autoload']['psr-4']['Installer\\'],
-            $this->composerDefinition['autoload-dev']['psr-4']['InstallerTest\\'],
-            $this->composerDefinition['extra']['branch-alias'],
-            $this->composerDefinition['extra']['optional-packages'],
             $this->composerDefinition['scripts']['pre-update-cmd'],
             $this->composerDefinition['scripts']['pre-install-cmd'],
-            $this->composerDefinition['scripts']['post-create-project-cmd'],
             $this->composerDefinition['scripts']['post-install-cmd'],
             $this->composerDefinition['scripts']['post-update-cmd'],
             $this->composerDefinition['scripts']['post-root-package-install']
