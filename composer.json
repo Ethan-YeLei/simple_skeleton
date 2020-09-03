@@ -37,7 +37,15 @@
         "hyperf/logger": "~2.0.0",
         "hyperf/memory": "~2.0.0",
         "hyperf/process": "~2.0.0",
-        "hyperf/redis": "~2.0.0"
+        "hyperf/redis": "~2.0.0",
+        "hyperf/json-rpc": "~2.0.0",
+        "hyperf/rpc": "~2.0.0",
+        "hyperf/rpc-client": "~2.0.0",
+        "hyperf/rpc-server": "~2.0.0",
+        "hyperf/constants": "~2.0.0",
+        "hyperf/async-queue": "~2.0.0",
+        "hyperf/amqp": "~2.0.0",
+        "hyperf/elasticsearch": "~2.0.0"
     },
     "require-dev": {
         "hyperf/testing": "~2.0.0"
